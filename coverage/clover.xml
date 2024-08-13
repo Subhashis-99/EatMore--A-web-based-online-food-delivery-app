@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1723374844935" clover="3.2.0">
+  <project timestamp="1723374844935" name="All files">
+    <metrics statements="113" coveredstatements="103" conditionals="20" coveredconditionals="14" methods="45" coveredmethods="36" elements="178" coveredelements="153" complexity="0" loc="113" ncloc="113" packages="4" files="19" classes="19"/>
+    <package name="namaste  js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="config.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\config.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="1821" count="3" type="stmt"/>
+        <line num="1822" count="3" type="stmt"/>
+        <line num="1824" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="namaste  js.src.components">
+      <metrics statements="61" coveredstatements="56" conditionals="14" coveredconditionals="9" methods="23" coveredmethods="19"/>
+      <file name="Body.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\Body.js">
+        <metrics statements="24" coveredstatements="21" conditionals="6" coveredconditionals="5" methods="8" coveredmethods="6"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="43" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="98" count="24" type="stmt"/>
+      </file>
+      <file name="Config.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\Config.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="Footer.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\Footer.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="Header.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\Header.js">
+        <metrics statements="9" coveredstatements="7" conditionals="6" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+      </file>
+      <file name="RestaurantCard.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\RestaurantCard.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="14" count="24" type="stmt"/>
+        <line num="15" count="24" type="stmt"/>
+      </file>
+      <file name="RestaurantMenu.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\RestaurantMenu.js">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="43" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+      </file>
+      <file name="Shimmer.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\Shimmer.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="20" count="60" type="stmt"/>
+      </file>
+      <file name="Title.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\Title.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+      </file>
+      <file name="UserOffline.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\UserOffline.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="8" type="stmt"/>
+      </file>
+      <file name="sum.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\components\sum.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="namaste  js.src.mocks">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Mock_data.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\mocks\Mock_data.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="7833" count="2" type="stmt"/>
+      </file>
+      <file name="dummyLogo.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\mocks\dummyLogo.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="namaste  js.src.utils">
+      <metrics statements="46" coveredstatements="41" conditionals="6" coveredconditionals="5" methods="22" coveredmethods="17"/>
+      <file name="cartSlice.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\utils\cartSlice.js">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+      </file>
+      <file name="helper.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\utils\helper.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="store.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\utils\store.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+      </file>
+      <file name="useOnline.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\utils\useOnline.js">
+        <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="14" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="18" count="14" type="stmt"/>
+      </file>
+      <file name="useRestaurantMenu.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\utils\useRestaurantMenu.js">
+        <metrics statements="25" coveredstatements="24" conditionals="6" coveredconditionals="5" methods="12" coveredmethods="12"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="21" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="30" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="32" count="12" type="stmt"/>
+        <line num="35" count="12" type="stmt"/>
+        <line num="38" count="9" type="stmt"/>
+        <line num="40" count="61" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1074" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="43" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+      </file>
+      <file name="userContext.js" path="C:\Users\KIIT\OneDrive\Desktop\namaste  js\src\utils\userContext.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
