@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const userContext = createContext({
+export const userData = createContext({
   user: {
     name: "chiku",
     email: "xyz@gmail.com",
@@ -10,4 +10,4 @@ const userContext = createContext({
   setUser: () => {}, // A default noop function, will be overridden by actual setter
 });
 
-export default userContext;
+export const Coordinates = createContext({});

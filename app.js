@@ -1,6 +1,10 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Header from "./src/components/Header";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet, useNavigate
+} from "react-router-dom";
+import { Header } from "./src/components/Header";
 import { Body } from "./src/components/Body";
 import { Footer } from "./src/components/Footer";
 import About from "./src/components/About";
@@ -8,9 +12,11 @@ import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import ProfileClass from "./src/components/ProfileClass";
 import Shimmer from "./src/components/Shimmer";
-import userContext from "./src/utils/userContext";
+import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState } from "react";
 import Cart from "./src/components/Cart";
+import { Coordinates } from "./src/utils/userContext";
+import Availability from "./src/components/availability";
 
 // Redux
 import { Provider } from "react-redux";
@@ -26,13 +32,23 @@ const AppLayout = () => {
     cast: "Bramhan",
   });
 
+  const [coordinate, setCoordinate] = useState({
+    lat: 18.9690247,
+    lng: 72.8205292,
+    address: "Mumbai, Maharashtra, India",
+  });
+
+  const navigate = useNavigate();
+
   return (
     <Provider store={store}>
-      <userContext.Provider value={{ user, setUser }  }>
-        <Header />
-        <Outlet />
-        <Footer />
-      </userContext.Provider>
+      <userData.Provider value={{ user, setUser }}>
+        <Coordinates.Provider value={{ coordinate, setCoordinate }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </Coordinates.Provider>
+      </userData.Provider>
     </Provider>
   );
 };
@@ -68,11 +84,11 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
-      }, 
+      },
       {
         path: "/cart",
-        element: <Cart/>,
-      }, 
+        element: <Cart />,
+      },
     ],
   },
 ]);

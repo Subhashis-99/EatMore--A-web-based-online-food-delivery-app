@@ -1,7 +1,13 @@
+import usePageAnimations from "../utils/usePageAnimations";
 const Shimmer = () => {
+  const { ShimmerRef } = usePageAnimations();
+
   return (
     <>
-      <div className="search-functionality flex justify-center">
+      <div
+        ref={ShimmerRef}
+        className="search-functionality flex justify-center"
+      >
         <input
           type="text"
           placeholder="search"
@@ -13,7 +19,10 @@ const Shimmer = () => {
       </div>
 
       <div className="res-card flex justify-center">
-        <div className="res-list flex flex-wrap m-5 ml-12" data-testid="shimmer">
+        <div
+          className="res-list flex flex-wrap m-5 ml-12"
+          data-testid="shimmer"
+        >
           {Array(12)
             .fill("")
             .map((_, index) => (

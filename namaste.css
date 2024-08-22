@@ -1,6 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.filterbtn{
+    border: 1px solid grey;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 4px 4px rgb(216, 215, 215);
+}
 
+.active{
+    background-color: rgb(235, 235, 235);
+    border:1px solid;
+}
+.active i {
+    display: block;
+}
+.hover-navbar {
+    @apply px-3 py-3 hover:bg-orange-500 rounded-md;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   
