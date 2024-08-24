@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import IMG_CDN_URL from "./Config";
-import Shimmer from "./Shimmer";
+import { MenuLoader } from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useDispatch } from "react-redux";
 import { additem } from "../utils/Cartslice";
@@ -15,7 +15,7 @@ const RestaurantMenu = () => {
   };
 
   return !restaurant ? (
-    <Shimmer />
+    <MenuLoader />
   ) : (
     <div className="menu flex">
       <div className="res-info">

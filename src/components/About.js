@@ -1,5 +1,5 @@
 import { Component } from "react";
-import userContext from "../utils/userContext";
+import { userData } from "../utils/userContext";
 import Profile from "./Profile";
 
 class About extends Component {
@@ -17,13 +17,13 @@ class About extends Component {
     return (
       <div>
         <h1>About Us Page</h1>
-        <userContext.Consumer>
+        <userData.Consumer>
           {({ user }) => (
             <h4>
               {user.name} - {user.email}
             </h4>
           )}
-        </userContext.Consumer>
+        </userData.Consumer>
         <p>This is the part of namaste react Day-08 code</p>
         <Profile name={"chiku"} />
       </div>

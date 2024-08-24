@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import userContext from "../utils/userContext";
+import {userData} from "../utils/userContext";
 
 const Section = ({ title, description, isVisible, setIsVisible, sectionName }) => {
   return (
@@ -27,7 +27,7 @@ const Section = ({ title, description, isVisible, setIsVisible, sectionName }) =
 
 const Instamart = () => {
   const [visibleSection, setIsVisibleSection] = useState("team");
-  const {user} = useContext(userContext);
+  const {user} = useContext(userData);
 
   return (
     <div>

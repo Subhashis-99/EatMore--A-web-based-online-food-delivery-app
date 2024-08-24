@@ -1,0 +1,1 @@
+ // const isOffline = UserOffline(); // it receives either true or false

@@ -2,51 +2,57 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import Title from "./Title";
-import userContext from "../utils/userContext";
 import { useSelector } from "react-redux";
-import dummy from '../assets/images/dummy.png';
+import dummy from "../assets/images/dummy.png";
+import usePageAnimations from "../utils/usePageAnimations";
+import { Coordinates } from "../utils/userContext";
 
-const Header = () => {
+export const Header = () => {
+  const { navRef, oldNavbarRef } = usePageAnimations();
+
   const [isLoggedIn, SetIsLoggedIn] = useState(false);
   const isOnline = useOnline();
-  const { user } = useContext(userContext);
 
   const cartItems = useSelector((store) => {
     return store.cart.items;
   });
+  const {coordinate: { address },} = useContext(Coordinates);
+
 
   return (
-    <div className="sticky top-0 bg-white z-10 shadow-md">
+    <div ref={oldNavbarRef} className="  bg-white  shadow-md">
       <div className="w-4/5 m-auto flex justify-between items-center">
         <Title />
-        {/* <Link to="/">
-          <img
-            data-testid="logo"
-            className="logo ml-2.5 w-[70px]"
-            alt={"logo"}
-            src={dummy}
-          />{" "}
-        </Link> */}
-
+        <span className=" truncate text-green-600 underline w-36 ">
+          {address}
+        </span>
         <div className="nav-items flex">
-          <ul className="h-full flex justify-between gap-5 text-xl">
-            <li className="px-3 py-3 hover:bg-orange-500 rounded-md">
+          <ul
+            ref={navRef}
+            className="h-full flex justify-between gap-5 text-xl"
+          >
+            <li className="hover-navbar">
               <Link to="/">Home</Link>
             </li>
-            <li className="px-3 py-3 hover:bg-orange-500 rounded-md">
+
+            <li className="hover-navbar">
               <Link to="/about"> About us </Link>
             </li>
-            <li className="px-3 py-3 hover:bg-orange-500 rounded-md">
-              Contact
+            <li className="hover-navbar">Contact</li>
+            <li className="hover-navbar" data-testid="cart-count">
+              <Link to="/cart">
+                <div className="flex gap-2 mt-[2px] ">
+                  <i className="fi fi-rr-shopping-bag "></i>
+                  <p className="bg-orange-200 rounded-md w-6 h-6 flex items-center justify-center text-sm">
+                    {cartItems.length}
+                  </p>
+                </div>
+              </Link>
             </li>
-            <li className="px-3 py-3 hover:bg-orange-500 rounded-md" data-testid="cart-count">
-              <Link to="/cart">cart- {cartItems.length}</Link>
+            <li className="hover-navbar">
+              <Link to="/instamart">QuickBasket</Link>
             </li>
-            <li className="px-3 py-3 hover:bg-orange-500 rounded-md">
-              <Link to="/instamart">Instamart</Link>
-            </li>
-            <li>{user.name}</li>
-            <li className="px-3 py-3 hover:bg-orange-500 rounded-md">
+            <li className="hover-navbar">
               {isLoggedIn ? (
                 <button onClick={() => SetIsLoggedIn(false)}>
                   Log out
@@ -60,7 +66,8 @@ const Header = () => {
               ) : (
                 <button onClick={() => SetIsLoggedIn(true)}>
                   Log In
-                  <span data-testid = "online-status"
+                  <span
+                    data-testid="online-status"
                     className={isOnline ? "text-green-600" : "text-red-600"}
                   >
                     {" "}
@@ -75,5 +82,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

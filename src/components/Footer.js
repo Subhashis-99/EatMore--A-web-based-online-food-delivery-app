@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import userContext from "../utils/userContext";
+import { userData } from "../utils/userContext";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
-  const { user } = useContext(userContext);
+  const { user } = useContext(userData);
 
   return (
     <>
