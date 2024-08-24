@@ -6,7 +6,7 @@ const useRestaurantMenu = (resid) => {
   const [menuItems, setMenuItems] = useState([]);
   useEffect(() => {
     getRestaurantInfo();
-  }, []);
+  }, [resid]);
 
   async function getRestaurantInfo() {
     try {
@@ -21,7 +21,8 @@ const useRestaurantMenu = (resid) => {
             x &&
             x.card["@type"] ===
               "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
-        )?.card?.info;
+      )?.card?.info;
+      console.log(restaurantData)
 
       setRestaurant(restaurantData);
 

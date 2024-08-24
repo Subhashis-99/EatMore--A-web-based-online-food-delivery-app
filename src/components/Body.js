@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import { SearchRestaurantLoader } from "./Shimmer";
+import { LandingPageLoader } from "./Shimmer";
 import { FilterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 import UserOffline from "./UserOffline";
@@ -11,22 +12,28 @@ import { Coordinates } from "../utils/userContext";
 import { RestaurantData } from "./RestaurantData";
 import Availability from "./Availability";
 
+
 export const Body = () => {
+  // State variables for managing input, restaurant data, and filters
   const [SearchText, SetSearchText] = useState("");
   const [Allrestaurants, SetAllRestaurants] = useState([]);
   const [searchedRestaurants, SetSearchedRestaurants] = useState([]);
   const [catagory, SetCatagory] = useState([]);
   const [TopResTitle, SetTopResTitle] = useState([]);
   const [unavailability, SetUnavailability] = useState([]);
+  const [loadingData, setLoadingData] = useState(false);
 
+  // Extract latitude and longitude from context
   const {
     coordinate: { lat, lng },
   } = useContext(Coordinates);
 
+  // Fetch restaurant data when latitude or longitude changes
   useEffect(() => {
     getRestaurants();
   }, [lat, lng]);
 
+  // Function to fetch restaurant data from the API
   async function getRestaurants() {
     try {
       const response = await fetch(
@@ -39,11 +46,10 @@ export const Body = () => {
 
       const json = await response.json();
       const onYourMind = json?.data?.cards[0]?.card?.card?.imageGridCards?.info;
-      const res =
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
+      const res = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       const banner = json?.data?.cards[1]?.card?.card?.header?.title;
 
+      // Update state with fetched data
       SetUnavailability(json?.data);
       SetCatagory(onYourMind);
       SetAllRestaurants(res);
@@ -54,8 +60,20 @@ export const Body = () => {
     }
   }
 
+  // Get the filter value from Redux store
   const filterVal = useSelector((store) => store.filter.filterVal);
 
+  // Show shimmer loading effect when filter changes
+  useEffect(() => {
+    if (filterVal) {
+      setLoadingData(true);
+      setTimeout(() => {
+        setLoadingData(false);
+      }, 1000); // Simulate loading time
+    }
+  }, [filterVal]);
+
+  // Filter restaurant data based on selected filter
   const filteredData = searchedRestaurants?.filter((item) => {
     if (!filterVal) return true;
     switch (filterVal) {
@@ -79,26 +97,42 @@ export const Body = () => {
     }
   });
 
+  // Handle search functionality and display shimmer effect during search
+  const handleSearch =async () => {
+    setLoadingData(true); // Start SearchRestaurantLoader when searching
+    const data =  await FilterData(SearchText, Allrestaurants);
+    SetSearchedRestaurants(data);
+    setTimeout(() => {
+      setLoadingData(false); // Stop SearchRestaurantLoader after search completes
+    }, 1000); // Simulate loading time
+  };
+
+  // Check if the user is online, show offline message if not
   const isOnline = useOnline();
   if (!isOnline) {
     return <UserOffline />;
   }
 
+
   return Allrestaurants?.length === 0 ? (
-    <Shimmer />
+    <LandingPageLoader />
+    // Show initial loading shimmer if no restaurants are loaded yet
   ) : (
     <>
       {unavailability?.communication ? (
         <>
+          {/* Show availability message if unavailability data exists */}
           <LandingPage />
           <Availability />
         </>
       ) : (
         <>
+          {/* Show landing page and other components when data is available */}
           <LandingPage />
           <OnYourMind catagoryList={catagory} />
           <FilterBar />
 
+          {/* Search input and button */}
           <div className="flex justify-center mt-10">
             <input
               className="search p-2 m-5 border-2"
@@ -113,27 +147,32 @@ export const Body = () => {
             <button
               data-testid="search-btn"
               className="bg-orange-400 p-2 m-5 rounded-md hover:text-white"
-              onClick={() => {
-                const data = FilterData(SearchText, Allrestaurants);
-                SetSearchedRestaurants(data);
-              }}
+              onClick={handleSearch}
             >
               Search
             </button>
           </div>
 
-          <div className="res-list flex flex-wrap m-5 ml-12" data-testid="res-list">
-            {searchedRestaurants?.length === 0 ? (
-              <h1 className="text-2xl text-red-600 mb-5">
-                No restaurant matching your search
-              </h1>
-            ) : (
-              <RestaurantData
-                restaurants={filterVal ? filteredData : searchedRestaurants}
-                TopResTitle={TopResTitle}
-              />
-            )}
-          </div>
+          {/* Conditionally render shimmer effect during loading */}
+          {loadingData ? (
+            <SearchRestaurantLoader />
+          ) : (
+            <div
+              className="res-list flex flex-wrap m-5 ml-12"
+              data-testid="res-list"
+            >
+              {searchedRestaurants?.length === 0 ? (
+                <h1 className="text-2xl text-red-600 mb-5">
+                  No restaurant matching your search
+                </h1>
+              ) : (
+                <RestaurantData
+                  restaurants={filterVal ? filteredData : searchedRestaurants}
+                  TopResTitle={TopResTitle}
+                />
+              )}
+            </div>
+          )}
         </>
       )}
     </>

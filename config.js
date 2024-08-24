@@ -7881,6 +7881,6 @@ export const restaurantList = // 20240821180030
 
 export const IMG_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-export const RestaurantMenu_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.3532772&lng=85.8265977&restaurantId=";
+export const RestaurantMenu_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.9690247&lng=72.8205292&restaurantId=";
 
 export const Restaurant_Title_URL = "https://cdn.dribbble.com/userupload/5966432/file/original-03c1fe57f7907074905632cbf187f058.png?resize=400x0";

@@ -2,7 +2,8 @@ import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
-  Outlet, useNavigate
+  Outlet,
+  useNavigate,
 } from "react-router-dom";
 import { Header } from "./src/components/Header";
 import { Body } from "./src/components/Body";
@@ -16,7 +17,6 @@ import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState } from "react";
 import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
-import Availability from "./src/components/availability";
 
 // Redux
 import { Provider } from "react-redux";

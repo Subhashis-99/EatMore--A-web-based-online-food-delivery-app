@@ -20,7 +20,7 @@ const FilterBar = () => {
     setActiveBtn(activeBtn === filtername ? null : filtername);
   };
   useEffect(() => {
-    dispatch(setFilterValue(activeBtn));
+    dispatch(setFilterValue(activeBtn));// Dispatch the filter value to Redux store
   }, [activeBtn, dispatch]);
 
   return (
