@@ -1,10 +1,5 @@
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  useNavigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./src/components/Header";
 import { Body } from "./src/components/Body";
 import { Footer } from "./src/components/Footer";
@@ -12,15 +7,17 @@ import About from "./src/components/About";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import ProfileClass from "./src/components/ProfileClass";
-import Shimmer from "./src/components/Shimmer";
+import { SearchRestaurantLoader } from "./src/components/Shimmer";
 import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState } from "react";
 import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
+import Contact from "./src/components/Contact";
 
 // Redux
 import { Provider } from "react-redux";
 import store from "./src/utils/store";
+import SignInOut from "./src/components/SignInOut";
 
 const Instamart = lazy(() => import("./src/components/Instamart"));
 
@@ -37,8 +34,6 @@ const AppLayout = () => {
     lng: 72.8205292,
     address: "Mumbai, Maharashtra, India",
   });
-
-  const navigate = useNavigate();
 
   return (
     <Provider store={store}>
@@ -80,7 +75,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/instamart",
         element: (
-          <Suspense fallback={<Shimmer />}>
+          <Suspense fallback={<SearchRestaurantLoader />}>
             <Instamart />
           </Suspense>
         ),
@@ -88,6 +83,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/signIn",
+        element: <SignInOut />,
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />,
       },
     ],
   },

@@ -1,48 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.filterbtn{
-    border: 1px solid grey;
-    padding: 10px 20px;
-    border-radius: 40px;
-    box-shadow: 4px 4px rgb(216, 215, 215);
+.filterbtn {
+  border: 1px solid grey;
+  padding: 10px 20px;
+  border-radius: 40px;
+  box-shadow: 4px 4px rgb(216, 215, 215);
 }
 
-.active{
-    background-color: rgb(235, 235, 235);
-    border:1px solid;
+.active {
+  background-color: rgb(235, 235, 235);
+  border: 1px solid;
 }
 .active i {
-    display: block;
+  display: block;
 }
 .hover-navbar {
-    @apply px-3 py-3 hover:bg-orange-500 rounded-md;
-  }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  
+  @apply px-3 py-3  hover:text-orange-500 ;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
 
-  /* Loader/spinner */
-  .loader {
-    width: 85px;
-    height: 85px;
-    border: 5px solid #FFF;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    opacity: 70%;
-    }
+/* Loader/spinner */
+.loader {
+  width: 85px;
+  height: 85px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  opacity: 70%;
+}
 
-    @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    } 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

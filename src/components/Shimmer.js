@@ -1,25 +1,4 @@
 import { Restaurant_Title_URL } from "../../config";
-export const SearchRestaurantLoader = () => {
-  return (
-    <>
-      <div className="res-card flex justify-center my-7">
-        <div
-          className="res-list flex flex-wrap m-5 ml-12"
-          data-testid="shimmer"
-        >
-          {Array(12)
-            .fill("")
-            .map((_, index) => (
-              <div
-                className=" shimmer-card m-4 p-4 w-[250px] h-[200px] bg-gray-100 rounded-lg animate-bounce"
-                key={index}
-              ></div>
-            ))}
-        </div>
-      </div>
-    </>
-  );
-};
 
 export const LandingPageLoader = () => {
   return (
@@ -72,6 +51,29 @@ export const LocationFetchLoader = () => {
     </div>
   );
 };
+
+export const SearchRestaurantLoader = () => {
+  return (
+    <>
+      <div className="res-card flex justify-center my-7">
+        <div
+          className="res-list flex flex-wrap m-5 ml-12"
+          data-testid="shimmer"
+        >
+          {Array(12)
+            .fill("")
+            .map((_, index) => (
+              <div
+                className=" shimmer-card m-4 p-4 w-[250px] h-[200px] bg-gray-100 rounded-lg animate-bounce"
+                key={index}
+              ></div>
+            ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
 
 export const MenuLoader = () => {
   return <h1>MenuLoader</h1>;

@@ -14,7 +14,7 @@ export const Resturantcard = ({
   const { user } = useContext(userData);
   return (
     <>
-      <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:bg-gray-200 transition-all shadow-md">
+      <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 hover:scale-95 duration-500">
         <img
           className="w-[200px] h-[170px] rounded-lg"
           src={IMG_CDN_URL + cloudinaryImageId}

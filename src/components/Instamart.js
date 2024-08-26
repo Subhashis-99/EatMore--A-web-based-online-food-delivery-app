@@ -1,7 +1,12 @@
 import React, { useState, useContext } from "react";
-import {userData} from "../utils/userContext";
 
-const Section = ({ title, description, isVisible, setIsVisible, sectionName }) => {
+const Section = ({
+  title,
+  description,
+  isVisible,
+  setIsVisible,
+  sectionName,
+}) => {
   return (
     <div className="border border-black p-2 m-2">
       <h3 className="font-bold text-xl">{title}</h3>
@@ -27,13 +32,10 @@ const Section = ({ title, description, isVisible, setIsVisible, sectionName }) =
 
 const Instamart = () => {
   const [visibleSection, setIsVisibleSection] = useState("team");
-  const {user} = useContext(userData);
 
   return (
     <div>
       <h1 className="text-3xl p-2 font-bold">Instamart</h1>
-      <h2>{user?.name}</h2>
-      <h2>{user?.email}</h2>
       <Section
         title="About Instamart"
         description="On the other hand, we denounce with righteous indignation and dislike men ..."
