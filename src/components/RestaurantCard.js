@@ -1,6 +1,6 @@
 import { IMG_CDN_URL } from "../../config";
 import { userData } from "../utils/userContext";
-import { useContext } from "react";
+
 
 export const Resturantcard = ({
   cloudinaryImageId,
@@ -11,7 +11,7 @@ export const Resturantcard = ({
   avgRating,
   sla,
 }) => {
-  const { user } = useContext(userData);
+
   return (
     <>
       <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 hover:scale-95 duration-500">

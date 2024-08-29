@@ -41,8 +41,8 @@ const SignInOut = () => {
         {AuthUserData ? (
           <div className="my-8">
             <div className="flex gap-2">
-              <img src="https://img.icons8.com/fluency/48/box-important--v1.png" className="text-[10px]" />
-              <p className=" font-mono text-3xl mt-[2px] ">
+              <img src="https://img.icons8.com/fluency/48/box-important--v1.png"  />
+              <p className=" font-mono text-3xl mt-1 ">
               Hii {AuthUserData.name.split(" ")[0]}...
               </p>
             </div>
