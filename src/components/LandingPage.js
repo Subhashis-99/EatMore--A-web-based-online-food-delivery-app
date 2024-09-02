@@ -23,7 +23,9 @@ const LandingPage = () => {
   const [showShimmer, setShowShimmer] = useState(false); // Shimmer loader visibility
 
   useEffect(() => {
-    setInputValue(address); // Sync input with context address
+    if (address) {
+      setInputValue(address); // Sync input with context address if available
+    }
   }, [address]);
 
   // Toggle sidebar visibility
@@ -36,6 +38,14 @@ const LandingPage = () => {
     const res = await fetch(`https://www.swiggy.com/dapi/misc/place-autocomplete?input=${val}`);
     const data = await res.json();
     setSearchResult(data?.data);
+  };
+
+  // Handle location selection
+  const selectLocation = async (place_id) => {
+    handleVisibility(); // Hide sidebar
+    setShowShimmer(true); // Show shimmer loader
+    await fetchLatAndLong(place_id); // Fetch location data
+    setTimeout(() => setShowShimmer(false), 1000); // Hide shimmer after delay
   };
 
   // Fetch location data
@@ -51,14 +61,6 @@ const LandingPage = () => {
   };
 
 
-  // Handle location selection
-  const selectLocation = async (place_id) => {
-    handleVisibility(); // Hide sidebar
-    setShowShimmer(true); // Show shimmer loader
-    await fetchLatAndLong(place_id); // Fetch location data
-    setTimeout(() => setShowShimmer(false), 1000); // Hide shimmer after delay
-  };
-
   return (
     <div className="relative w-full">
       {/* Overlay shimmer loader */}
@@ -70,6 +72,7 @@ const LandingPage = () => {
 
       {/* Main content */}
       <div className={showShimmer ? "opacity-0" : "opacity-100 transition-opacity duration-500"}>
+
         {/* Sidebar */}
         <SideBar
           visible={visible}

@@ -9,10 +9,11 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 import ProfileClass from "./src/components/ProfileClass";
 import { SearchRestaurantLoader } from "./src/components/Shimmer";
 import { userData } from "./src/utils/userContext";
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState,useEffect } from "react";
 import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
 import Contact from "./src/components/Contact";
+import { Toaster } from "react-hot-toast";
 
 // Redux
 import { Provider } from "react-redux";
@@ -29,11 +30,18 @@ const AppLayout = () => {
     cast: "Bramhan",
   });
 
-  const [coordinate, setCoordinate] = useState({
-    lat: 18.9690247,
-    lng: 72.8205292,
-    address: "Mumbai, Maharashtra, India",
+  const [coordinate, setCoordinate] = useState(() => {
+    // Load saved location from localStorage if available, otherwise set to null
+    const savedLocation = localStorage.getItem("savedLocation");
+    return savedLocation ? JSON.parse(savedLocation) : { lat: null, lng: null, address: "" };
   });
+
+  // Save location to localStorage whenever it changes
+  useEffect(() => {
+    if (coordinate.lat && coordinate.lng) {
+      localStorage.setItem("savedLocation", JSON.stringify(coordinate));
+    }
+  }, [coordinate]);
 
   return (
     <Provider store={store}>
@@ -42,6 +50,7 @@ const AppLayout = () => {
           <Header />
           <Outlet />
           <Footer />
+          <Toaster />
         </Coordinates.Provider>
       </userData.Provider>
     </Provider>

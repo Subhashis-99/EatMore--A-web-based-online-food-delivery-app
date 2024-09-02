@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUserData, removeUserData } from "../utils/authSlicer";
 import { useNavigate } from "react-router-dom";
 import image from "../assets/images/image.png";
+import toast from "react-hot-toast";
 
 const SignInOut = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,11 @@ const SignInOut = () => {
       photo: data.user.photoURL,
     };
     dispatch(addUserData(AuthUserData));
-    navigate("/");
+    toast.success("Sign-In Successful", {
+      position: "top-right"
+    });  
+    navigate("/cart");
+   
   };
 
   let handleSignOut = async () => {
