@@ -3,7 +3,7 @@ import { Restaurant_Title_URL } from "../../config";
 export const LandingPageLoader = () => {
   return (
     <div>
-      <div className="w-[95%] mx-auto flex flex-col md:flex-row bg-white mt-8 z-10 animate-pulse">
+      <div className="w-[95%] h-[100%] mx-auto flex flex-col md:flex-row bg-white mt-8 z-10 animate-pulse">
         {/* Left Section Shimmer */}
         <section className="w-full md:w-1/2 p-8 mt-5">
           <div className="space-y-3">
@@ -24,10 +24,18 @@ export const LandingPageLoader = () => {
         </section>
       </div>
 
-      <div className="w-[90%] mx-auto mt-7 mb-10 p-2 overflow-hidden animate-pulse">
+      <div className="w-[90%] mx-auto mt-7 mb-10  overflow-hidden animate-pulse">
         {/* Shimmer for the title */}
         <section>
-          <div className="bg-gray-300 h-8 w-1/3 mb-3 rounded-md my-16"></div>
+          <div className="bg-gray-300 h-8 w-1/3 mb-3 rounded-md my-1"></div>
+          <div className="flex justify-between items-center gap-7 bg-gray-100 p-9 my-6">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <div
+                key={index}
+                className="w-28 h-28 rounded-full bg-gray-300 animate-pulse"
+              />
+            ))}
+          </div>
         </section>
       </div>
     </div>
@@ -76,5 +84,28 @@ export const SearchRestaurantLoader = () => {
 
 
 export const MenuLoader = () => {
-  return <h1>MenuLoader</h1>;
+  return (
+    <div className="w-full lg:w-[60%] mx-auto mt-10">
+      <div className="w-full h-52 bg-gray-200  rounded-xl animate-pulse"></div>
+      <div className="w-full flex mt-5 justify-between">
+        <div className="w-[45%] h-10 rounded-xl bg-gray-200 animate-pulse"></div>
+        <div className="w-[45%] h-10 rounded-xl bg-gray-200 animate-pulse"></div>
+      </div>
+      <div className="w-full mt-10">
+        {Array(12)
+          .fill("")
+          .map((_, index) => (
+            <div className="w-full h-40 flex justify-between my-3" key={index}>
+              <div className="w-[60%] flex flex-col gap-5 h-full">
+                <div className="w-[100%] bg-gray-200 h-5 animate-pulse"></div>
+                <div className="w-[50%] bg-gray-200 h-5 animate-pulse"></div>
+                <div className="w-[30%] bg-gray-200 h-5 animate-pulse"></div>
+              </div>
+              <div className="w-[30%] h-full bg-gray-200 animate-pulse"></div>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
 };
+

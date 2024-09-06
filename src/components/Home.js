@@ -11,9 +11,9 @@ import OnYourMind from "./OnYourMind";
 import { Coordinates } from "../utils/userContext";
 import { RestaurantData } from "./RestaurantData";
 import Availability from "./Availability";
+import { Footer } from "./Footer";
 
-
-export const Body = () => {
+export const Home = () => {
   // State variables for managing input, restaurant data, and filters
   const [SearchText, SetSearchText] = useState("");
   const [Allrestaurants, SetAllRestaurants] = useState([]);
@@ -46,7 +46,9 @@ export const Body = () => {
 
       const json = await response.json();
       const onYourMind = json?.data?.cards[0]?.card?.card?.imageGridCards?.info;
-      const res = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      const res =
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
       const banner = json?.data?.cards[1]?.card?.card?.header?.title;
 
       // Update state with fetched data
@@ -98,9 +100,9 @@ export const Body = () => {
   });
 
   // Handle search functionality and display shimmer effect during search
-  const handleSearch =async () => {
+  const handleSearch = async () => {
     setLoadingData(true); // Start SearchRestaurantLoader when searching
-    const data =  await FilterData(SearchText, Allrestaurants);
+    const data = await FilterData(SearchText, Allrestaurants);
     SetSearchedRestaurants(data);
     setTimeout(() => {
       setLoadingData(false); // Stop SearchRestaurantLoader after search completes
@@ -113,11 +115,10 @@ export const Body = () => {
     return <UserOffline />;
   }
 
-
   return Allrestaurants?.length === 0 ? (
     <LandingPageLoader />
-    // Show initial loading shimmer if no restaurants are loaded yet
   ) : (
+    // Show initial loading shimmer if no restaurants are loaded yet
     <>
       {unavailability?.communication ? (
         <>
@@ -133,7 +134,7 @@ export const Body = () => {
           <FilterBar />
 
           {/* Search input and button */}
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-10 ">
             <input
               className="search p-2 m-5 border-2"
               data-testid="search-input"
@@ -173,6 +174,7 @@ export const Body = () => {
               )}
             </div>
           )}
+          <Footer />
         </>
       )}
     </>

@@ -16,7 +16,7 @@ function DetailMenuCard({ info }) {
     name,
     price,
     defaultPrice,
-    itemAttribute: { vegClassifier },
+    itemAttribute: { vegClassifier} = " ",
     ratings: { aggregatedRating: { rating, ratingCountV2 } },
     description = " ",
     imageId,

@@ -1,15 +1,15 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./src/components/Header";
-import { Body } from "./src/components/Body";
-import { Footer } from "./src/components/Footer";
+import { Home } from "./src/components/Home";
 import About from "./src/components/About";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import ProfileClass from "./src/components/ProfileClass";
 import { SearchRestaurantLoader } from "./src/components/Shimmer";
+import ScrollToTop from "./src/components/ScrollToTop";
 import { userData } from "./src/utils/userContext";
-import React, { lazy, Suspense, useState,useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
 import Contact from "./src/components/Contact";
@@ -31,12 +31,12 @@ const AppLayout = () => {
   });
 
   const [coordinate, setCoordinate] = useState(() => {
-    // Load saved location from localStorage if available, otherwise set to null
     const savedLocation = localStorage.getItem("savedLocation");
-    return savedLocation ? JSON.parse(savedLocation) : { lat: null, lng: null, address: "" };
+    return savedLocation
+      ? JSON.parse(savedLocation)
+      : { lat: null, lng: null, address: "" };
   });
 
-  // Save location to localStorage whenever it changes
   useEffect(() => {
     if (coordinate.lat && coordinate.lng) {
       localStorage.setItem("savedLocation", JSON.stringify(coordinate));
@@ -47,15 +47,17 @@ const AppLayout = () => {
     <Provider store={store}>
       <userData.Provider value={{ user, setUser }}>
         <Coordinates.Provider value={{ coordinate, setCoordinate }}>
+          <ScrollToTop />
           <Header />
           <Outlet />
-          <Footer />
           <Toaster />
         </Coordinates.Provider>
       </userData.Provider>
     </Provider>
   );
 };
+
+export default AppLayout;
 
 const appRouter = createBrowserRouter([
   {
@@ -65,7 +67,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Home />,
       },
       {
         path: "/about",

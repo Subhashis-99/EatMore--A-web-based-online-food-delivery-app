@@ -16,3 +16,26 @@ export const closedIcon =
 
 export const cartEmptyIcon =
   "https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-illustration-download-in-svg-png-gif-file-formats--shopping-ecommerce-simple-error-state-pack-user-interface-illustrations-6024626.png";
+  
+const googleplayImg =
+"https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png";
+const AppstoreImg =
+"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png";
+
+const fbIcon = "https://img.icons8.com/color/48/facebook.png";
+
+const twitterIcon = "https://img.icons8.com/color/48/twitterx--v1.png";
+
+const InstaIcon = "https://img.icons8.com/fluency/48/instagram-new.png";
+const LinkedInIcon = "https://img.icons8.com/fluency/48/linkedin.png";
+
+export {
+InstaIcon,
+LinkedInIcon,
+fbIcon,
+twitterIcon,
+googleplayImg,
+AppstoreImg,
+};
+
+

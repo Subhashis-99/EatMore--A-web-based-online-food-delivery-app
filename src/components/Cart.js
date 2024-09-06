@@ -141,7 +141,7 @@ const Cart = () => {
                       onClick={() => navigate("/signUp")}
                     >
                       <div>
-                        <span className="text-sm">New to Swiggy?</span>
+                        <span className="text-sm">New to EatMore?</span>
                         <span className="block font-bold">SIGN UP</span>
                       </div>
                     </button>
