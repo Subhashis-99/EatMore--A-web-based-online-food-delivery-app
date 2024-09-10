@@ -1,5 +1,4 @@
 import { IMG_CDN_URL } from "../../config";
-import { userData } from "../utils/userContext";
 
 
 export const Resturantcard = ({

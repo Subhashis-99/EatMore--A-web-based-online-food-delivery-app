@@ -27,6 +27,8 @@ const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const AuthUserData = useSelector((store) => store.auth.AuthUserData);
   const cartData = JSON.parse(localStorage.getItem("CARTDATA")) || {};
+    // Print cartData to the console
+
 
   const ClearItem = (index) => {
     if (cartItems.length > 1) {
@@ -176,7 +178,7 @@ const Cart = () => {
           {/* Cart Items */}
           {cartItems.map(
             (
-              { name, price, defaultPrice, itemAttribute: { vegClassifier } },
+              { name, price, defaultPrice, itemAttribute: { vegClassifier}=" " },
               index
             ) => (
               <div

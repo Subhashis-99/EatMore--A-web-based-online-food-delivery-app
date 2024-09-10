@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { vegIcon, nonVegIcon, closedIcon } from "../../config";
-import { useDispatch, useSelector } from "react-redux";
-import { additem, clearCart } from "../utils/cartSlice"; // Combined import from cartSlice
-import toast from "react-hot-toast"; // Importing toast for notifications
+import { useDispatch,useSelector } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
+import AddToCart from "./AddToCart";
+import { toggleDiffRes } from "../utils/toggleSlice";
 
 // resInfo: Contains information about the current restaurant selected by the user.
 // cartData: Retrieves the existing cart data from localStorage, which stores the current cart's restaurant info.(resInfo value is populated under certain condition)
@@ -16,39 +17,25 @@ function DetailMenuCard({ info }) {
     name,
     price,
     defaultPrice,
-    itemAttribute: { vegClassifier} = " ",
-    ratings: { aggregatedRating: { rating, ratingCountV2 } },
+    itemAttribute: { vegClassifier } = " ",
+    ratings: {
+      aggregatedRating: { rating, ratingCountV2 },
+    },
     description = " ",
     imageId,
   } = info;
 
   // State for toggling full description view and different restaurant alert
   const [isMore, setIsMore] = useState(false);
-  const [isDiffRes, setIsDefRes] = useState(false);
+  const isDiffRes = useSelector((state) => state.toggle.isDiffRes);
+  const dispatch = useDispatch();
 
   // Trimmed description for display if it's too long
   let trimDescription = description?.substring(0, 138) + "...";
 
-  const resInfo = useSelector((store) => store.resInfo.data); 
-  const dispatch = useDispatch(); 
-
-  const addFoodItem = (info) => {
-    const cartData = JSON.parse(localStorage.getItem("CARTDATA")) || []; 
-
-    const isSameRestaurant =
-      cartData.length === 0 || cartData.name === resInfo.name; // Check if cart is empty or from the same restaurant
-
-    if (isSameRestaurant) {
-      localStorage.setItem("CARTDATA", JSON.stringify(resInfo)); // Update localStorage with current restaurant info
-      dispatch(additem(info)); 
-      toast.success("Item added!"); // Show success toast
-    } else {
-      handleDifRes(); // Handle different restaurant scenario
-    }
-  };
 
   const handleDifRes = () => {
-    setIsDefRes((prev) => !prev); // Toggle the different restaurant alert
+    dispatch(toggleDiffRes());
   };
 
   const DeleteCart = () => {
@@ -114,13 +101,7 @@ function DetailMenuCard({ info }) {
           ) : (
             <img src={closedIcon} />
           )}
-          {/* ADD button */}
-          <button
-            className="bg-white border px-8 py-2 drop-shadow rounded-xl text-lg font-bold text-green-500 absolute bottom-[-20px] left-6"
-            onClick={() => addFoodItem(info)}
-          >
-            ADD
-          </button>
+          <AddToCart info={info} handleDifRes={handleDifRes} />
         </div>
       </div>
 

@@ -5,11 +5,14 @@ import usePageAnimations from "../utils/usePageAnimations";
 import { Coordinates } from "../utils/userContext";
 import SideBar from "./SideBar";
 import { LocationFetchLoader } from "./Shimmer";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   // Lottie animation settings
   const options = { animationData: animation, loop: true };
   const { View } = useLottie(options);
+
+  const navigate = useNavigate();
 
   // GSAP animation refs
   const { textRef, formRef, animationRef } = usePageAnimations();
@@ -110,7 +113,7 @@ const LandingPage = () => {
 
               <p className="text-gray-500">
                 Already a member of our community?{" "}
-                <a href="#" className="text-red-500 font-semibold">Sign in</a>
+                <a href="#" className="text-red-500 font-semibold" onClick={()=>navigate("/signIn")}>Sign in</a>
               </p>
             </div>
           </section>

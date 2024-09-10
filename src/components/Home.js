@@ -134,12 +134,12 @@ export const Home = () => {
           <FilterBar />
 
           {/* Search input and button */}
-          <div className="flex justify-center mt-10 ">
+          <div className="flex justify-center items-center gap-4 my-14">
             <input
-              className="search p-2 m-5 border-2"
+              className="search border-2  rounded-xl px-4 py-2 shadow-sm focus:outline-none w-72"
               data-testid="search-input"
               type="text"
-              placeholder="search"
+              placeholder="Search for restaurants..."
               value={SearchText}
               onChange={(e) => {
                 SetSearchText(e.target.value);
@@ -147,7 +147,7 @@ export const Home = () => {
             />
             <button
               data-testid="search-btn"
-              className="bg-orange-400 p-2 m-5 rounded-md hover:text-white"
+              className="bg-orange-400 text-white rounded-lg px-6 py-2 font-semibold hover:bg-orange-500 transition-colors duration-300 shadow-md"
               onClick={handleSearch}
             >
               Search

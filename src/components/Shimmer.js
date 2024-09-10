@@ -109,3 +109,38 @@ export const MenuLoader = () => {
   );
 };
 
+import React from "react";
+
+export const SearchResLoader = () => {
+  return (
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-9 p-3'>
+    {Array(10).fill("").map((_, index) => (
+      <div
+        key={index}
+        className="bg-white p-2 rounded-lg h-full animate-pulse"
+      >
+        <div className="relative bg-white mb-2 rounded-lg p-2 h-full">
+          <div className="flex justify-between text-sm opacity-50 mb-1">
+            <div className="w-1/2 h-4 bg-gray-200 rounded"></div>
+            <div className="w-1/4 h-4 bg-gray-200 rounded"></div>
+          </div>
+          <hr className="border border-dotted" />
+          <div className="my-2 flex justify-between">
+            <div className="w-[50%] flex flex-col gap-1">
+              <div className="w-5 h-5 bg-gray-200 rounded-full mt-1 mb-1"></div>
+              <div className="h-6 bg-gray-200 rounded mb-1 w-3/4"></div>
+              <div className="h-6 bg-gray-200 rounded mb-1 w-1/4"></div>
+              <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+            </div>
+            <div className="w-[40%] h-[130px] bg-gray-200 rounded-md"></div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  );
+};
+
+
+
+

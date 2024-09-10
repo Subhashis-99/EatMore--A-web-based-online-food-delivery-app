@@ -1,26 +1,29 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom";
 import { Header } from "./src/components/Header";
 import { Home } from "./src/components/Home";
-import About from "./src/components/About";
+import Info from "./src/components/Info";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
-import ProfileClass from "./src/components/ProfileClass";
+import { useNavigate } from "react-router-dom";
 import { SearchRestaurantLoader } from "./src/components/Shimmer";
 import ScrollToTop from "./src/components/ScrollToTop";
 import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
-import Contact from "./src/components/Contact";
 import { Toaster } from "react-hot-toast";
+import Search from "./src/components/Search";
+import AboutSection from "./src/components/AboutSection";
+import ServicesSection from "./src/components/ServicesSection";
 
 // Redux
 import { Provider } from "react-redux";
 import store from "./src/utils/store";
 import SignInOut from "./src/components/SignInOut";
+import ContactSection from "./src/components/ContactSection";
 
-const Instamart = lazy(() => import("./src/components/Instamart"));
+const QuickBasket = lazy(() => import("./src/components/QuickBasket"));
 
 const AppLayout = () => {
   const [user, setUser] = useState({
@@ -70,12 +73,24 @@ const appRouter = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/info",
+        element: <Info />,
         children: [
           {
-            path: "profileclass",
-            element: <ProfileClass />,
+            path: "",
+            element: <Navigate to="about" />, 
+          },
+          {
+            path: "about",
+            element: <AboutSection />,
+          },
+          {
+            path: "contact",
+            element: <ContactSection />,
+          },
+          {
+            path: "services",
+            element: <ServicesSection />,
           },
         ],
       },
@@ -84,10 +99,10 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path: "/instamart",
+        path: "/quickBasket",
         element: (
           <Suspense fallback={<SearchRestaurantLoader />}>
-            <Instamart />
+            <QuickBasket />
           </Suspense>
         ),
       },
@@ -100,8 +115,8 @@ const appRouter = createBrowserRouter([
         element: <SignInOut />,
       },
       {
-        path: "/contact-us",
-        element: <Contact />,
+        path: "/search",
+        element: <Search />,
       },
     ],
   },

@@ -5,13 +5,15 @@
 
 .filterbtn {
   border: 1px solid grey;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 40px;
-  box-shadow: 4px 4px rgb(216, 215, 215);
+  box-shadow: 3px 3px rgb(216, 215, 215);
 }
 
 .active {
-  background-color: rgb(235, 235, 235);
+  background-color: #3e4152;
+  color: white;
+  
   border: 1px solid;
 }
 .active i {
@@ -45,3 +47,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+

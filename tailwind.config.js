@@ -9,6 +9,8 @@ module.exports = {
       },
       fontFamily: {
         custom: ["Dancing Script", "cursive"],
+        'lobster': ['Lobster', 'cursive'],
+        'playwrite': ['Playwrite DK Loopet', 'sans-serif'],
       },
       spacing: {
         '3': '12px', // If you want to adjust padding/margin, it's 3 * 4px
