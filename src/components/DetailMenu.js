@@ -48,7 +48,7 @@ function DetailMenuCard({ info }) {
     <>
       {/* Main card container */}
       <div className="flex w-full justify-between min-h-[172px] relative">
-        <div className="w-[70%]">
+        <div className=" w-[55%] md:w-[70%]">
           {/* Food classification icon */}
           <img
             className="w-5 rounded-md"
@@ -75,12 +75,12 @@ function DetailMenuCard({ info }) {
           </p>
           {/* Description with toggle for more/less */}
           {description?.length > 140 ? (
-            <div className="flex">
-              <p className="text-slate-600">
+            <div className="flex flex-wrap">
+              <p className="text-slate-600 line-clamp-2 md:line-clamp-none">
                 {isMore ? description : trimDescription}
               </p>
               <button
-                className="font-bold ml-1 underline text-orange-300"
+                className="font-bold ml-1 underline text-orange-300 hidden md:block"
                 onClick={() => setIsMore(!isMore)}
               >
                 {isMore ? "less" : "more"}
@@ -90,11 +90,11 @@ function DetailMenuCard({ info }) {
             <p className="text-slate-600">{description}</p>
           )}
         </div>
-        <div className="w-[20%] relative h-full">
+        <div className="w-[35%] md:w-[20%] relative h-full">
           {/* Item image or closed icon */}
           {imageId ? (
             <img
-              className="w-[170px] h-[170px] object-cover rounded-md"
+              className="w-auto md:w-[170px] h-auto md:h-[170px] rounded-md"
               src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${imageId}`}
               alt="Food Item"
             />
@@ -110,21 +110,21 @@ function DetailMenuCard({ info }) {
 
       {/* Different restaurant alert */}
       {isDiffRes && (
-        <div className="w-[520px] h-[194px] border shadow-md fixed bottom-0 left-[26%] bg-white p-8 flex flex-col gap-3 z-50">
-          <h1 className="text-xl font-semibold">Items already in cart</h1>
-          <p className="text-sm text-zinc-600">
+        <div className=" w-[280px] h-auto md:w-[520px] md:h-[220px] border shadow-md fixed bottom-0 left-[13%] md:left-[26%] bg-white p-2 md:p-8 flex flex-col gap-3 z-50">
+          <h1 className="text-sm md:text-xl font-semibold">Items already in cart</h1>
+          <p className="text-sm md:text-lg text-zinc-600">
             Your cart contains items from another restaurant. Would you like to
             reset your cart for adding items from this restaurant?
           </p>
-          <div className="flex justify-between w-full  gap-3">
+          <div className="flex justify-between w-full gap-3">
             <button
-              className="border-2 w-1/2 p-2 border-green-600 text-green-600 hover:shadow-lg"
+              className="border-2 w-1/2 p-1 md:p-2 border-green-600 text-green-600 text-xs md:text-base hover:shadow-lg"
               onClick={() => handleDifRes()}
             >
               No
             </button>
             <button
-              className="w-1/2 p-2 bg-green-600 text-white hover:shadow-lg"
+              className="w-1/2 p-1 md:p-2 bg-green-600 text-white text-xs md:text-base hover:shadow-lg"
               onClick={() => DeleteCart()}
             >
               YES, START AFRESH

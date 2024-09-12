@@ -127,7 +127,7 @@ export const Home = () => {
           <Availability />
         </>
       ) : (
-        <>
+        <div className="w-full sm:w-[90%] lg:w-[95%] mx-auto mt-3 overflow-hidden">
           {/* Show landing page and other components when data is available */}
           <LandingPage />
           <OnYourMind catagoryList={catagory} />
@@ -175,7 +175,7 @@ export const Home = () => {
             </div>
           )}
           <Footer />
-        </>
+        </div>
       )}
     </>
   );

@@ -25,7 +25,7 @@ const FilterBar = () => {
 
   return (
     <>
-      <div className="my-2 flex gap-5 justify-center">
+      <div className="my-2 flex flex-wrap gap-5 justify-center">
         {filterOption.map((filtername,index) => {
           return (
             <button

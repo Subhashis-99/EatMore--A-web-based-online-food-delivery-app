@@ -3,7 +3,7 @@ const Title = () => {
     return (
       <a href="/">
         <img
-          className="h-24 rounded-full"
+          className="h-24 rounded-full object-contain"
           src= {Restaurant_Title_URL}
         ></img>
       </a>

@@ -71,8 +71,8 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="w-full">
-      <div className="w-[800px] mx-auto">
+    <div className="w-[80%] sm:w-full mx-auto">
+      <div className="w-[95%] md:w-[800px] mx-auto">
         {/* Breadcrumb navigation */}
         <p className="text-[12px] text-slate-400 mt-3">
           <Link to="/">
@@ -93,15 +93,22 @@ const RestaurantMenu = () => {
         <h1 className="font-bold pt-6 text-2xl">{resInfo?.name}</h1>
 
         {/* Restaurant info section */}
-        <div className="w-full h-[220px] bg-gradient-to-t p-5 from-slate-200/70 rounded-[30px] mt-3">
+        <div className="w-full h-auto md:h-[220px] bg-gradient-to-t p-5 from-slate-200/70 rounded-[30px] mt-3">
           <div className="w-full border border-slate-200/70 rounded-[30px] h-full bg-white">
             <div className="p-4 w-full ml-3">
               {/* Rating and cost details */}
-              <div className="flex items-center gap-1 font-semibold">
-                <i className="fi fi-ss-circle-star text-green-600 text-lg"></i>
-                <span>{resInfo?.avgRating}</span>
-                <span>({resInfo?.totalRatingsString})</span>
-                <span className="mt-[1px]">{resInfo?.costForTwoMessage}</span>
+              <div className="flex items-center gap-3 font-semibold text-sm sm:text-base">
+                <div className="flex items-center gap-1 min-h-[24px] align-top">
+                  <i className="fi fi-ss-circle-star text-green-600 text-lg -mt-0 md:mt-1"></i>
+                  <span className="leading-none -mt-1 md:mt-0">{resInfo?.avgRating}</span>
+                </div>
+
+                <span className="truncate text-gray-500 min-h-[24px]">
+                  ({resInfo?.totalRatingsString})
+                </span>
+                <span className="truncate text-gray-700 min-h-[24px]">
+                  {resInfo?.costForTwoMessage}
+                </span>
               </div>
 
               {/* Cuisine types */}
@@ -160,11 +167,11 @@ const RestaurantMenu = () => {
         <h2 className="text-center mt-5 leading-5">MENU</h2>
 
         {/* Search bar */}
-        <div className="w-full mt-5 relative cursor-pointer">
-          <div className="w-full p-3 font-semibold bg-slate-200/70 text-center rounded-xl">
-            Search for dishes
+        <div className="w-[90%] md:w-full mt-5 cursor-pointer">
+          <div className="w-full p-3 font-semibold bg-slate-200/70 rounded-xl flex items-center justify-between">
+            <span className="text-center w-full">Search for dishes</span>
+            <i className="fi fi-rr-search mt-1"></i>
           </div>
-          <i className="fi fi-rr-search absolute top-[14px] right-4"></i>
         </div>
 
         {/* Top Picks section */}

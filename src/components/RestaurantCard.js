@@ -1,6 +1,5 @@
 import { IMG_CDN_URL } from "../../config";
 
-
 export const Resturantcard = ({
   cloudinaryImageId,
   name,
@@ -10,12 +9,11 @@ export const Resturantcard = ({
   avgRating,
   sla,
 }) => {
-
   return (
     <>
-      <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 hover:scale-95 duration-500">
+      <div className="m-4 p-4 w-full sm:w-[250px] bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 hover:scale-95 duration-500">
         <img
-          className="w-[200px] h-[170px] rounded-lg"
+          className="w-full h-[170px] rounded-lg mx-auto object-cover"
           src={IMG_CDN_URL + cloudinaryImageId}
         />
         <h2 className="font-bold text-lg py-2 truncate">{name}</h2>
@@ -29,8 +27,6 @@ export const Resturantcard = ({
         <h5 className="truncate">{cuisines.join(", ")}</h5>
         <h4>{areaName}</h4>
         <h4>{costForTwo}</h4>
-        {/* <h4>{user.name}</h4>
-        <h4>{user.email}</h4> */}
       </div>
     </>
   );

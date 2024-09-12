@@ -20,10 +20,9 @@ const SignInOut = () => {
     };
     dispatch(addUserData(AuthUserData));
     toast.success("Sign-In Successful", {
-      position: "top-right"
-    });  
+      position: "top-right",
+    });
     navigate("/cart");
-   
   };
 
   let handleSignOut = async () => {
@@ -31,42 +30,48 @@ const SignInOut = () => {
     dispatch(removeUserData());
     navigate("/");
   };
+
   return (
     <div className="relative flex items-center justify-center min-h-screen py-6 bg-gray-100">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-50 blur-[1px] "
+        className="absolute inset-0 bg-cover bg-center opacity-50 blur-[1px] hidden md:block"
         style={{
           backgroundImage: `url(${image})`,
         }}
       ></div>
 
       {/* Content on top of the background */}
-      <div className="relative w-full max-w-md mx-auto bg-white p-7  rounded-lg shadow-lg z-10 -mt-24">
+      <div className="relative w-full max-w-sm mx-auto bg-transparent md:bg-white p-9 rounded-lg  shadow-none md:shadow-lg z-10 -mt-36 md:-mt-16">
+
         {AuthUserData ? (
-          <div className="my-8">
-            <div className="flex gap-2">
-              <img src="https://img.icons8.com/fluency/48/box-important--v1.png"  />
-              <p className=" font-mono text-3xl mt-1 ">
-              Hii {AuthUserData.name.split(" ")[0]}...
+          <div className="my-8 px-4">
+            <div className="flex gap-2 items-center">
+              <img
+                src="https://img.icons8.com/fluency/48/box-important--v1.png"
+                alt="important box"
+              />
+              <p className="font-mono text-2xl md:text-3xl">
+                Hi {AuthUserData.name.split(" ")[0]}...
               </p>
             </div>
-            <div className="ml-2 font-mono text-2xl">
-              {" "}
-              Do You want to Log Out ???{" "}
+            <div className="ml-2 font-mono text-lg md:text-2xl">
+              Do you want to Log Out?
             </div>
 
             <button
-              className="bg-green-500 p-2 ml-2  hover:text-white rounded-md my-2 "
+              className="bg-green-500 p-2 ml-2 hover:text-white rounded-md my-2"
               onClick={handleSignOut}
             >
               Log Out
             </button>
           </div>
         ) : (
-          <>
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold font-serif">Login</h2>
+          <div className="px-4 rounded-xl">
+            <div className="text-center mb-9">
+              <h2 className="text-2xl md:text-3xl font-bold font-serif">
+                Login
+              </h2>
             </div>
             <form>
               <div className="mb-4">
@@ -116,25 +121,31 @@ const SignInOut = () => {
             <div className="text-center mt-6">
               <p className="text-gray-600 text-sm font-semibold flex items-center justify-center my-[2px]">
                 <span className="flex-grow border-t border-gray-300 mr-2"></span>
-                login with
+                Login with
                 <span className="flex-grow border-t border-gray-300 ml-2"></span>
               </p>
               <div className="flex justify-center mt-2 gap-8">
-                <button>
+                <button onClick={handleSignIn}>
                   <img
                     src="https://img.icons8.com/color/48/google-logo.png"
-                    onClick={handleSignIn}
+                    alt="Google Logo"
                   />
                 </button>
                 <button>
-                  <img src="https://img.icons8.com/color/48/facebook.png" />
+                  <img
+                    src="https://img.icons8.com/color/48/facebook.png"
+                    alt="Facebook Logo"
+                  />
                 </button>
                 <button>
-                  <img src="https://img.icons8.com/color/48/twitterx--v1.png" />
+                  <img
+                    src="https://img.icons8.com/color/48/twitterx--v1.png"
+                    alt="Twitter Logo"
+                  />
                 </button>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>

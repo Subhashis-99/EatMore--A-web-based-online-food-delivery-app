@@ -149,7 +149,7 @@ const Cart = () => {
                     </button>
                   </div>
                 </div>
-                <div className="w-32 mt-3">
+                <div className="w-32 mt-3 hidden lg:block">
                   <img
                     src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_147,h_140/Image-login_btpq7r"
                     alt="Illustration"

@@ -20,7 +20,10 @@ const LandingPage = () => {
   // State hooks
   const [visible, setVisible] = useState(false); // Sidebar visibility
   const [searchResult, setSearchResult] = useState([]); // Search results
-  const { coordinate: { address }, setCoordinate } = useContext(Coordinates); // Context values
+  const {
+    coordinate: { address },
+    setCoordinate,
+  } = useContext(Coordinates); // Context values
 
   const [inputValue, setInputValue] = useState(""); // Input field value
   const [showShimmer, setShowShimmer] = useState(false); // Shimmer loader visibility
@@ -38,7 +41,9 @@ const LandingPage = () => {
   // Fetch search results
   const SearchResultFunc = async (val) => {
     if (!val) return;
-    const res = await fetch(`https://www.swiggy.com/dapi/misc/place-autocomplete?input=${val}`);
+    const res = await fetch(
+      `https://www.swiggy.com/dapi/misc/place-autocomplete?input=${val}`
+    );
     const data = await res.json();
     setSearchResult(data?.data);
   };
@@ -53,7 +58,9 @@ const LandingPage = () => {
 
   // Fetch location data
   const fetchLatAndLong = async (place_id) => {
-    const res = await fetch(`https://www.swiggy.com/dapi/misc/address-recommend?place_id=${place_id}`);
+    const res = await fetch(
+      `https://www.swiggy.com/dapi/misc/address-recommend?place_id=${place_id}`
+    );
     const data = await res.json();
     const location = data?.data[0]?.geometry?.location;
     setCoordinate({
@@ -62,7 +69,6 @@ const LandingPage = () => {
       address: data?.data[0]?.formatted_address,
     });
   };
-
 
   return (
     <div className="relative w-full">
@@ -74,8 +80,13 @@ const LandingPage = () => {
       )}
 
       {/* Main content */}
-      <div className={showShimmer ? "opacity-0" : "opacity-100 transition-opacity duration-500"}>
-
+      <div
+        className={
+          showShimmer
+            ? "opacity-0"
+            : "opacity-100 transition-opacity duration-500"
+        }
+      >
         {/* Sidebar */}
         <SideBar
           visible={visible}
@@ -88,13 +99,17 @@ const LandingPage = () => {
         {/* Main sections */}
         <div className="w-[95%] mx-auto flex flex-col md:flex-row bg-white mt-8 z-10">
           {/* Left section */}
-          <section className="w-full md:w-1/2 p-8 mt-5">
+          <section className="w-full md:w-full lg:w-1/2 p-8 mt-5">
             <div ref={textRef}>
-              <h2 className="text-orange-500 font-bold text-4xl mb-2 font-custom">Hungry?</h2>
+              <h2 className="text-orange-500 font-bold text-4xl mb-2 font-custom">
+                Hungry?
+              </h2>
               <h1 className="font-bold text-5xl mb-3">
                 Wait a minute for <span className="block">delicious.</span>
               </h1>
-              <p className="text-gray-600 mb-6">Why Wait? Hot, Tasty Food Delivered in 20 Minutes!</p>
+              <p className="text-gray-600 mb-6">
+                Why Wait? Hot, Tasty Food Delivered in 20 Minutes!
+              </p>
             </div>
 
             <div ref={formRef}>
@@ -113,13 +128,22 @@ const LandingPage = () => {
 
               <p className="text-gray-500">
                 Already a member of our community?{" "}
-                <a href="#" className="text-red-500 font-semibold" onClick={()=>navigate("/signIn")}>Sign in</a>
+                <a
+                  href="#"
+                  className="text-red-500 font-semibold"
+                  onClick={() => navigate("/signIn")}
+                >
+                  Sign in
+                </a>
               </p>
             </div>
           </section>
 
           {/* Right section with Lottie animation */}
-          <section ref={animationRef} className="w-full md:w-1/2 p-20 -mt-16 hidden md:block">
+          <section
+            ref={animationRef}
+            className="w-full lg:w-1/2 p-20 -mt-16 hidden lg:block"
+          >
             {View}
           </section>
         </div>
