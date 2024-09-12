@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { vegIcon, nonVegIcon, closedIcon } from "../../config";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../utils/cartSlice";
 import AddToCart from "./AddToCart";
 import { toggleDiffRes } from "../utils/toggleSlice";
@@ -33,7 +33,6 @@ function DetailMenuCard({ info }) {
   // Trimmed description for display if it's too long
   let trimDescription = description?.substring(0, 138) + "...";
 
-
   const handleDifRes = () => {
     dispatch(toggleDiffRes());
   };
@@ -48,7 +47,7 @@ function DetailMenuCard({ info }) {
     <>
       {/* Main card container */}
       <div className="flex w-full justify-between min-h-[172px] relative">
-        <div className=" w-[55%] md:w-[70%]">
+        <div className=" w-[55%] md:w-[70%] px-0 md:px-5">
           {/* Food classification icon */}
           <img
             className="w-5 rounded-md"
@@ -110,21 +109,23 @@ function DetailMenuCard({ info }) {
 
       {/* Different restaurant alert */}
       {isDiffRes && (
-        <div className=" w-[280px] h-auto md:w-[520px] md:h-[220px] border shadow-md fixed bottom-0 left-[13%] md:left-[26%] bg-white p-2 md:p-8 flex flex-col gap-3 z-50">
-          <h1 className="text-sm md:text-xl font-semibold">Items already in cart</h1>
+        <div className=" w-[280px] h-auto md:w-[520px] md:h-[220px] border-2 shadow-inner fixed bottom-0 left-[13%] md:left-[17%] lg:left-[26%] bg-white p-4 md:p-8 flex flex-col gap-3 z-50">
+          <h1 className="text-sm md:text-lg font-semibold">
+            Items already in cart
+          </h1>
           <p className="text-sm md:text-lg text-zinc-600">
             Your cart contains items from another restaurant. Would you like to
             reset your cart for adding items from this restaurant?
           </p>
-          <div className="flex justify-between w-full gap-3">
+          <div className="flex justify-between w-full gap-3 ">
             <button
-              className="border-2 w-1/2 p-1 md:p-2 border-green-600 text-green-600 text-xs md:text-base hover:shadow-lg"
+              className="border-2 w-1/2 p-1 md:p-2 border-green-600 text-green-600 text-xs md:text-base hover:shadow-lg hover:scale-95"
               onClick={() => handleDifRes()}
             >
               No
             </button>
             <button
-              className="w-1/2 p-1 md:p-2 bg-green-600 text-white text-xs md:text-base hover:shadow-lg"
+              className="w-1/2 p-1 md:p-2 bg-green-600 text-white text-xs md:text-base hover:shadow-lg hover:scale-95"
               onClick={() => DeleteCart()}
             >
               YES, START AFRESH

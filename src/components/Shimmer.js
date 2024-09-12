@@ -24,10 +24,10 @@ export const LandingPageLoader = () => {
         </section>
       </div>
 
-      <div className="w-[90%] mx-auto mt-7 mb-10  overflow-hidden animate-pulse">
+      <div className="w-[90%] mx-auto overflow-hidden animate-pulse">
         {/* Shimmer for the title */}
         <section>
-          <div className="bg-gray-300 h-8 w-1/3 mb-3 rounded-md my-1"></div>
+          <div className="bg-gray-300 h-8 w-1/3 mb-3 rounded-md my-1 mx-5  md:mx-3 lg:mx-0"></div>
           <div className="flex justify-between items-center gap-7 bg-gray-100 p-6 my-6">
             <div className="flex justify-between flex-wrap sm:justify-start sm:flex-nowrap gap-4">
               <div className="flex justify-between gap-4">
@@ -169,6 +169,13 @@ export const SearchResLoader = () => {
             </div>
           </div>
         ))}
+    </div>
+  );
+};
+
+export const LazyShimmer = () => {
+  return (
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-300">
     </div>
   );
 };

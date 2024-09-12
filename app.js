@@ -1,29 +1,33 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import { Header } from "./src/components/Header";
 import { Home } from "./src/components/Home";
-import Info from "./src/components/Info";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
-import { useNavigate } from "react-router-dom";
-import { SearchRestaurantLoader } from "./src/components/Shimmer";
+import { LazyShimmer } from "./src/components/Shimmer";
 import ScrollToTop from "./src/components/ScrollToTop";
 import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
 import { Toaster } from "react-hot-toast";
-import Search from "./src/components/Search";
-import AboutSection from "./src/components/AboutSection";
-import ServicesSection from "./src/components/ServicesSection";
+import SignInOut from "./src/components/SignInOut";
 
 // Redux
 import { Provider } from "react-redux";
 import store from "./src/utils/store";
-import SignInOut from "./src/components/SignInOut";
-import ContactSection from "./src/components/ContactSection";
 
 const QuickBasket = lazy(() => import("./src/components/QuickBasket"));
+const Search = lazy(() => import("./src/components/Search"));
+const Info = lazy(() => import("./src/components/Info"));
+const AboutSection = lazy(() => import("./src/components/AboutSection"));
+const ContactSection = lazy(() => import("./src/components/ContactSection"));
+const ServicesSection = lazy(() => import("./src/components/ServicesSection"));
 
 const AppLayout = () => {
   const [user, setUser] = useState({
@@ -74,23 +78,39 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/info",
-        element: <Info />,
+        element: (
+          <Suspense fallback={<LazyShimmer />}>
+            <Info />
+          </Suspense>
+        ),
         children: [
           {
             path: "",
-            element: <Navigate to="about" />, 
+            element: <Navigate to="about" />,
           },
           {
             path: "about",
-            element: <AboutSection />,
+            element: (
+              <Suspense fallback={<LazyShimmer />}>
+                <AboutSection />
+              </Suspense>
+            ),
           },
           {
             path: "contact",
-            element: <ContactSection />,
+            element: (
+              <Suspense fallback={<LazyShimmer />}>
+                <ContactSection />
+              </Suspense>
+            ),
           },
           {
             path: "services",
-            element: <ServicesSection />,
+            element: (
+              <Suspense fallback={<LazyShimmer />}>
+                <ServicesSection />
+              </Suspense>
+            ),
           },
         ],
       },
@@ -101,7 +121,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/quickBasket",
         element: (
-          <Suspense fallback={<SearchRestaurantLoader />}>
+          <Suspense fallback={<LazyShimmer />}>
             <QuickBasket />
           </Suspense>
         ),
@@ -116,7 +136,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/search",
-        element: <Search />,
+        element: (
+          <Suspense fallback={<LazyShimmer />}>
+            <Search />
+          </Suspense>
+        ),
       },
     ],
   },
