@@ -24,7 +24,7 @@ function AddToCart({ info, handleDifRes }) {
 
   return (
     <button
-      className="bg-white border px-8 py-2 drop-shadow rounded-xl text-lg font-bold text-green-500 absolute bottom-[-20px] left-6"
+      className="bg-white border px-3 md:px-8 py-2 drop-shadow rounded-xl text-lg font-bold text-green-500 absolute bottom-[-20px] left-1/2 -translate-x-1/2"
       onClick={addFoodItem}
     >
       ADD
