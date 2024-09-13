@@ -11,7 +11,7 @@ export const Resturantcard = ({
 }) => {
   return (
     <>
-      <div className="m-4 p-4 w-full sm:w-[250px] bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 hover:scale-95 duration-500">
+      <div className="m-4 p-4 w-[290px] md:w-[250px] h-auto bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 hover:scale-95 duration-500">
         <img
           className="w-full h-[170px] rounded-lg mx-auto object-cover"
           src={IMG_CDN_URL + cloudinaryImageId}

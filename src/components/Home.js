@@ -37,7 +37,7 @@ export const Home = () => {
   async function getRestaurants() {
     try {
       const response = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
+        `https://cors-by-codethread-for-swiggy.vercel.app/cors/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
       );
 
       if (!response.ok) {
@@ -124,10 +124,11 @@ export const Home = () => {
         <>
           {/* Show availability message if unavailability data exists */}
           <LandingPage />
-          <Availability />
+            <Availability />
+            <Footer />
         </>
       ) : (
-        <div className="w-full sm:w-[90%] lg:w-[95%] mx-auto mt-3 overflow-hidden">
+        <div className="w-full  mx-auto mt-3 overflow-hidden">
           {/* Show landing page and other components when data is available */}
           <LandingPage />
           <OnYourMind catagoryList={catagory} />

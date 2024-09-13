@@ -33,7 +33,7 @@ const RestaurantMenu = () => {
       try {
         // API request to fetch menu data
         const response = await fetch(
-          `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${lat}&lng=${lng}&restaurantId=${Resid}&catalog_qa=undefined&submitAction=ENTER`
+          `https://cors-by-codethread-for-swiggy.vercel.app/cors/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${lat}&lng=${lng}&restaurantId=${Resid}&catalog_qa=undefined&submitAction=ENTER`
         );
         const data = await response.json();
 
@@ -100,7 +100,9 @@ const RestaurantMenu = () => {
               <div className="flex items-center gap-3 font-semibold text-sm sm:text-base">
                 <div className="flex items-center gap-1 min-h-[24px] align-top">
                   <i className="fi fi-ss-circle-star text-green-600 text-lg -mt-0 md:mt-1"></i>
-                  <span className="leading-none -mt-1 md:mt-0">{resInfo?.avgRating}</span>
+                  <span className="leading-none -mt-1 md:mt-0">
+                    {resInfo?.avgRating}
+                  </span>
                 </div>
 
                 <span className="truncate text-gray-500 min-h-[24px]">

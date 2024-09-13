@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth,GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBTFWYdHi2eby9xqnXkh0wbChJ7zI1Z22Y",
-  authDomain: "eatmore-onlinefood-delivery.firebaseapp.com",
-  projectId: "eatmore-onlinefood-delivery",
-  storageBucket: "eatmore-onlinefood-delivery.appspot.com",
-  messagingSenderId: "664142530097",
-  appId: "1:664142530097:web:0cf4cacf79330fd27c3710",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

@@ -7,16 +7,13 @@ import {
 } from "react-router-dom";
 import { Header } from "./src/components/Header";
 import { Home } from "./src/components/Home";
-import Error from "./src/components/Error";
-import RestaurantMenu from "./src/components/RestaurantMenu";
 import { LazyShimmer } from "./src/components/Shimmer";
 import ScrollToTop from "./src/components/ScrollToTop";
 import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState, useEffect } from "react";
-import Cart from "./src/components/Cart";
 import { Coordinates } from "./src/utils/userContext";
 import { Toaster } from "react-hot-toast";
-import SignInOut from "./src/components/SignInOut";
+
 
 // Redux
 import { Provider } from "react-redux";
@@ -28,6 +25,10 @@ const Info = lazy(() => import("./src/components/Info"));
 const AboutSection = lazy(() => import("./src/components/AboutSection"));
 const ContactSection = lazy(() => import("./src/components/ContactSection"));
 const ServicesSection = lazy(() => import("./src/components/ServicesSection"));
+const Error = lazy(() => import("./src/components/Error"));
+const RestaurantMenu = lazy(() => import("./src/components/RestaurantMenu"));
+const Cart = lazy(() => import("./src/components/Cart"));
+const SignInOut = lazy(() => import("./src/components/SignInOut"));
 
 const AppLayout = () => {
   const [user, setUser] = useState({
@@ -70,7 +71,11 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error />,
+    errorElement: (
+      <Suspense fallback={<LazyShimmer />}>
+        <Error />
+      </Suspense>
+    ),
     children: [
       {
         path: "/",
@@ -116,7 +121,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:Resid",
-        element: <RestaurantMenu />,
+        element: (
+          <Suspense fallback={<LazyShimmer />}>
+            <RestaurantMenu />
+          </Suspense>
+        ),
       },
       {
         path: "/quickBasket",
@@ -128,11 +137,19 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <Suspense fallback={<LazyShimmer />}>
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/signIn",
-        element: <SignInOut />,
+        element: (
+          <Suspense fallback={<LazyShimmer />}>
+            <SignInOut />
+          </Suspense>
+        ),
       },
       {
         path: "/search",

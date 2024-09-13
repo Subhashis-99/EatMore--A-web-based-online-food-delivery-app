@@ -32,7 +32,7 @@ function Search() {
     setLoading(true);
     try {
       const data = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/search/v3?lat=${lat}&lng=${lng}&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=b01eeaf5-62d3-dbac-7e73-adb7b3a41998`
+        `https://cors-by-codethread-for-swiggy.vercel.app/cors/dapi/restaurants/search/v3?lat=${lat}&lng=${lng}&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=b01eeaf5-62d3-dbac-7e73-adb7b3a41998`
       );
       const json = await data.json();
       const FinalData =
@@ -51,7 +51,7 @@ function Search() {
     setLoading(true);
     try {
       const data = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/search/v3?lat=${lat}&lng=${lng}&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=755e0464-fbda-277b-fc1b-63cf88ad4875&selectedPLTab=RESTAURANT`
+        `https://cors-by-codethread-for-swiggy.vercel.app/cors/dapi/restaurants/search/v3?lat=${lat}&lng=${lng}&str=${searchQuery}&trackingId=undefined&submitAction=ENTER&queryUniqueId=755e0464-fbda-277b-fc1b-63cf88ad4875&selectedPLTab=RESTAURANT`
       );
       const json = await data.json();
       const FinalData =

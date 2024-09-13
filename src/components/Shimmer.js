@@ -69,6 +69,7 @@ export const LandingPageLoader = () => {
   );
 };
 
+
 export const LocationFetchLoader = () => {
   return (
     <div className="w-full">
@@ -81,7 +82,7 @@ export const LocationFetchLoader = () => {
           <span className="loader"></span>
         </div>
 
-        <h1 className="text-3xl">Looking for great food near you....</h1>
+        <h1 className="text-xl md:text-3xl">Looking for great food near you....</h1>
       </div>
     </div>
   );

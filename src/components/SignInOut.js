@@ -3,8 +3,10 @@ import { auth, provider } from "../../FirebaseAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { addUserData, removeUserData } from "../utils/authSlicer";
 import { useNavigate } from "react-router-dom";
-import image from "../assets/images/image.png";
 import toast from "react-hot-toast";
+import { signinBcg } from "../../config";
+
+// Use the Cloudinary URL
 
 const SignInOut = () => {
   const dispatch = useDispatch();
@@ -37,13 +39,12 @@ const SignInOut = () => {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-50 blur-[1px] hidden md:block"
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${signinBcg})`,
         }}
       ></div>
 
       {/* Content on top of the background */}
-      <div className="relative w-full max-w-sm mx-auto bg-transparent md:bg-white p-9 rounded-lg  shadow-none md:shadow-lg z-10 -mt-36 md:-mt-16">
-
+      <div className="relative w-full max-w-sm mx-auto bg-transparent md:bg-white p-9 rounded-lg shadow-none md:shadow-lg z-10 -mt-36 md:-mt-16">
         {AuthUserData ? (
           <div className="my-8 px-4">
             <div className="flex gap-2 items-center">
@@ -51,20 +52,27 @@ const SignInOut = () => {
                 src="https://img.icons8.com/fluency/48/box-important--v1.png"
                 alt="important box"
               />
-              <p className="font-mono text-2xl md:text-3xl">
+              <p className=" text-2xl md:text-3xl">
                 Hi {AuthUserData.name.split(" ")[0]}...
               </p>
             </div>
-            <div className="ml-2 font-mono text-lg md:text-2xl">
-              Do you want to Log Out?
+            <div className="ml-2 font-mono text-lg md:text-xl text-gray-700">
+              Do you want to log out?
             </div>
-
-            <button
-              className="bg-green-500 p-2 ml-2 hover:text-white rounded-md my-2"
-              onClick={handleSignOut}
-            >
-              Log Out
-            </button>
+            <div className="flex gap-4 ml-2 my-4">
+              <button
+                className="bg-green-500 text-white p-2 rounded-md shadow-md hover:bg-green-600 transition duration-300 px-10"
+                onClick={handleSignOut}
+              >
+                Log Out
+              </button>
+              <button
+                className="bg-gray-300 text-gray-700 p-2 px-6 rounded-md shadow-sm hover:bg-gray-400 transition duration-300"
+                onClick={() => navigate("/")}
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         ) : (
           <div className="px-4 rounded-xl">

@@ -20,7 +20,7 @@ const SideBar = ({
   return (
     // Sidebar container with dynamic positioning based on visibility
     <div
-      className={`bg-white w-[48%] h-full z-50 absolute transition-all duration-500 opacity-95 ${
+      className={`bg-white w-full md:w-[53%] h-full z-50 absolute transition-all duration-500 opacity-95 ${
         visible ? "left-0" : "-left-[100%]"
       }`}
     >
