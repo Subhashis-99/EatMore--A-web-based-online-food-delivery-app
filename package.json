@@ -6,8 +6,8 @@
   "homepage": "https://Subhashis-99.github.io/EatMore--A-web-based-online-food-delivery-app",
   "scripts": {
     "test": "jest",
-    "start": "parcel namaste.html",
-    "build": "parcel build namaste.html --public-url ./", 
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./", 
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
