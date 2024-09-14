@@ -66,4 +66,53 @@
 }
 
 
+/* loader property for lazy loading shimmer */
+.loader_lazy_shimmer {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+}
+
+.loader_lazy_shimmer div {
+  width: 8%;
+  height: 24%;
+  background: rgb(128, 128, 128);
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  opacity: 0;
+  border-radius: 50px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  animation: fade458 1s linear infinite;
+}
+
+@keyframes fade458 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+
+.loader_lazy_shimmer div {
+  transform: rotate(calc(30deg * var(--i))) translate(0, -130%);
+}
+
+.bar1 { --i: 0; }
+.bar2 { --i: 1; }
+.bar3 { --i: 2; }
+.bar4 { --i: 3; }
+.bar5 { --i: 4; }
+.bar6 { --i: 5; }
+.bar7 { --i: 6; }
+.bar8 { --i: 7; }
+.bar9 { --i: 8; }
+.bar10 { --i: 9; }
+.bar11 { --i: 10; }
+.bar12 { --i: 11; }
+
+
+
 

@@ -69,7 +69,6 @@ export const LandingPageLoader = () => {
   );
 };
 
-
 export const LocationFetchLoader = () => {
   return (
     <div className="w-full">
@@ -82,7 +81,9 @@ export const LocationFetchLoader = () => {
           <span className="loader"></span>
         </div>
 
-        <h1 className="text-xl md:text-3xl">Looking for great food near you....</h1>
+        <h1 className="text-xl md:text-3xl">
+          Looking for great food near you....
+        </h1>
       </div>
     </div>
   );
@@ -175,8 +176,18 @@ export const SearchResLoader = () => {
 };
 
 export const LazyShimmer = () => {
+  const bars = Array.from({ length: 12 }, (_, i) => i + 1);
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-300">
+      <div className="loader_lazy_shimmer">
+        {bars.map((bar, index) => (
+          <div
+            key={bar}
+            className={`bar${bar}`}
+            style={{ animationDelay: `${-index * 0.1}s` }}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 };
