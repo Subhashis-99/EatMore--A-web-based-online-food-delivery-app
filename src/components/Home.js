@@ -45,10 +45,10 @@ export const Home = () => {
       }
 
       const json = await response.json();
-      const onYourMind = json?.data?.cards[0]?.card?.card?.imageGridCards?.info;
+      const onYourMind = json?.data?.cards.find(data => data?.card?.card?.id == "whats_on_your_mind").card?.card?.imageGridCards?.info;
       const res =
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
+        json?.data?.cards.find(data => data?.card?.card?.id == "top_brands_for_you").card?.card?.gridElements?.infoWithStyle?.restaurants;
+
       const banner = json?.data?.cards[1]?.card?.card?.header?.title;
 
       // Update state with fetched data

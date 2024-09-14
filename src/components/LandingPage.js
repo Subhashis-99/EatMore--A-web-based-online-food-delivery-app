@@ -7,7 +7,6 @@ import SideBar from "./SideBar";
 import { LocationFetchLoader } from "./Shimmer";
 import { useNavigate } from "react-router-dom";
 
-
 const LandingPage = () => {
   // Lottie animation settings
   const options = { animationData: animation, loop: true };
@@ -98,7 +97,7 @@ const LandingPage = () => {
         />
 
         {/* Main sections */}
-        <div className="w-[95%] mx-auto flex flex-col md:flex-row bg-white  z-10">
+        <div className="w-[95%] mx-auto flex flex-col md:flex-row flex-wrap bg-white  z-10">
           {/* Left section */}
           <section className="w-full md:w-full lg:w-1/2 p-8 mt-12">
             <div ref={textRef}>
@@ -119,32 +118,31 @@ const LandingPage = () => {
                   type="text"
                   placeholder="Enter your delivery location"
                   className="border-2 border-gray-300 p-3 rounded-l-md focus:outline-none flex-grow"
-                  value={inputValue} 
-                  onChange={(e) => setInputValue(e.target.value)} 
-                  onClick={handleSearchFunctionality} 
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onClick={handleSearchFunctionality}
                 />
                 <button className="bg-green-500 text-white p-3 rounded-r-md hover:bg-green-600">
                   Discover
                 </button>
               </div>
 
-              <p className="text-gray-500">
-                Already a member of our community?{" "}
-                <a
-                  href="#"
-                  className="text-red-500 font-semibold"
+              <div className="text-gray-500 flex gap-2 flex-col md:flex-row flex-wrap">
+                <p>Already a member of our community? </p>
+                <p
+                  className="text-red-500 font-semibold cursor-pointer"
                   onClick={() => navigate("/signIn")}
                 >
                   Sign in
-                </a>
-              </p>
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Right section with Lottie animation */}
           <section
             ref={animationRef}
-            className="w-full lg:w-1/2 p-20 -mt-9 hidden lg:block"
+            className="w-full lg:w-1/2 p-16 -mt-11 hidden lg:block"
           >
             {View}
           </section>

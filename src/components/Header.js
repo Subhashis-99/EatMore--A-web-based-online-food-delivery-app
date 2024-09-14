@@ -121,7 +121,7 @@ export const Header = () => {
               <img
                 src={AuthUserData.photo}
                 alt="welcome"
-                className="h-6 w-6 rounded-xl object-contain"
+                className="h-6 w-6 rounded-full object-cover"
               />
             ) : (
               <div className="mt-[5px]">
