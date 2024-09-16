@@ -17,8 +17,9 @@ const DialogflowMessenger = () => {
 
   return (
     <df-messenger
+      class="custom-messenger"
       intent="WELCOME"
-      chat-title="Mira"
+      chat-title="Mira(Online)🟢"
       agent-id={process.env.REACT_APP_DIALOGFLOW_AGENT_ID}
       language-code="en"
     ></df-messenger>
