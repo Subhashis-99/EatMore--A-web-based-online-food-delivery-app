@@ -13,6 +13,7 @@ import { RestaurantData } from "./RestaurantData";
 import Availability from "./Availability";
 import { Footer } from "./Footer";
 
+
 export const Home = () => {
   // State variables for managing input, restaurant data, and filters
   const [SearchText, SetSearchText] = useState("");
@@ -175,7 +176,7 @@ export const Home = () => {
               )}
             </div>
           )}
-          <Footer />
+              <Footer />
         </div>
       )}
     </>

@@ -14,7 +14,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-100 mt-20 py-6">
+    <footer className="bg-gray-100 mt-20 ">
       {/* Download App Section */}
       <div className="flex flex-col md:flex-row justify-evenly items-center bg-gray-100 py-10 md:py-14 px-6 md:px-8 shadow-lg">
         <div className="text-center mb-6 md:mb-0 md:w-1/2">
@@ -64,9 +64,9 @@ export const Footer = () => {
             <h3 className="text-base md:text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/faqs" className="text-sm hover:underline">
+                <Link to="/faq" className="text-sm hover:underline">
                   FAQs
-                </a>
+                </Link>
               </li>
               <Link to="/info/contact">
                 <li className="text-sm hover:underline"> Contact Us</li>

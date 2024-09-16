@@ -9,11 +9,11 @@ import { Header } from "./src/components/Header";
 import { Home } from "./src/components/Home";
 import { LazyShimmer } from "./src/components/Shimmer";
 import ScrollToTop from "./src/components/ScrollToTop";
-import { userData } from "./src/utils/userContext";
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import { Coordinates } from "./src/utils/userContext";
 import { Toaster } from "react-hot-toast";
-
+import DialogflowMessenger from "./src/components/DialogflowMessenger";
+import SmoothScrolling from "./src/components/SmoothScrolling";
 
 // Redux
 import { Provider } from "react-redux";
@@ -29,15 +29,11 @@ const Error = lazy(() => import("./src/components/Error"));
 const RestaurantMenu = lazy(() => import("./src/components/RestaurantMenu"));
 const Cart = lazy(() => import("./src/components/Cart"));
 const SignInOut = lazy(() => import("./src/components/SignInOut"));
+const FAQ = lazy(() => import("./src/components/FAQ"));
+
+
 
 const AppLayout = () => {
-  const [user, setUser] = useState({
-    name: "Subhahsis",
-    email: "spraharaj@gmail.com",
-    age: 23,
-    cast: "Bramhan",
-  });
-
   const [coordinate, setCoordinate] = useState(() => {
     const savedLocation = localStorage.getItem("savedLocation");
     return savedLocation
@@ -53,14 +49,13 @@ const AppLayout = () => {
 
   return (
     <Provider store={store}>
-      <userData.Provider value={{ user, setUser }}>
-        <Coordinates.Provider value={{ coordinate, setCoordinate }}>
-          <ScrollToTop />
-          <Header />
-          <Outlet />
-          <Toaster />
-        </Coordinates.Provider>
-      </userData.Provider>
+      <Coordinates.Provider value={{ coordinate, setCoordinate }}>
+        <ScrollToTop />
+        <Header />
+        <Outlet />
+        <Toaster />
+        <DialogflowMessenger />
+      </Coordinates.Provider>
     </Provider>
   );
 };
@@ -70,7 +65,11 @@ export default AppLayout;
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: (
+      <SmoothScrolling>
+        <AppLayout />
+      </SmoothScrolling>
+    ),
     errorElement: (
       <Suspense fallback={<LazyShimmer />}>
         <Error />
@@ -156,6 +155,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<LazyShimmer />}>
             <Search />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/faq",
+        element: (
+          <Suspense fallback={<LazyShimmer />}>
+            <FAQ />
           </Suspense>
         ),
       },
