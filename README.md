@@ -86,41 +86,41 @@ You can explore the live version of the EatMore app by visiting: [Live Demo](htt
   <tr>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">Home Page</p>
-      <img src="https://github.com/user-attachments/assets/224aa2e3-029b-4a41-951c-3cc3a25a944f" alt="Home Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/224aa2e3-029b-4a41-951c-3cc3a25a944f" alt="Home Page" width="500" height="220" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">Restaurant Page</p>
-      <img src="https://github.com/user-attachments/assets/0f3d5c2e-67ad-46dd-8c29-c63713d0ca29" alt="Restaurant Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/0f3d5c2e-67ad-46dd-8c29-c63713d0ca29" alt="Restaurant Page" width="500" height="220" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
   </tr>
   <tr>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">Search Page</p>
-      <img src="https://github.com/user-attachments/assets/92009d45-bb35-4caf-8d7f-39973df36801" alt="Search Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/92009d45-bb35-4caf-8d7f-39973df36801" alt="Search Page" width="500" height="275" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">Cart Page</p>
-      <img src="https://github.com/user-attachments/assets/fac97663-c747-4ca1-970f-00900423da0f" alt="Cart Page" width="420" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/fac97663-c747-4ca1-970f-00900423da0f" alt="Cart Page" width="420" height="275" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
   </tr>
   <tr>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">Contact Page</p>
-      <img src="https://github.com/user-attachments/assets/4112625d-ad38-4c96-85a8-777da39517ee" alt="Contact Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/4112625d-ad38-4c96-85a8-777da39517ee" alt="Contact Page" width="500" height="190" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">LogIn Page</p>
-      <img src="https://github.com/user-attachments/assets/07f7a9d2-6102-4c19-8e0f-32f61e07a587" alt="LogIn Page" width="350" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/07f7a9d2-6102-4c19-8e0f-32f61e07a587" alt="LogIn Page" width="300" height="180" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
   </tr>
   <tr>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">Footer Page</p>
-      <img src="https://github.com/user-attachments/assets/b6a6fe0e-9172-494f-a842-d099bac6705b" alt="Footer Page" width="500" height="230" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/b6a6fe0e-9172-494f-a842-d099bac6705b" alt="Footer Page" width="500" height="220" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
     <td style="padding: 10px; text-align: center;">
       <p style="font-weight: bold; margin-top: 5px;">FAQ Page</p>
-      <img src="https://github.com/user-attachments/assets/917d3462-f5a7-4fae-84ad-d8c3323e9631" alt="FAQ Page" width="400" height="230" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+      <img src="https://github.com/user-attachments/assets/917d3462-f5a7-4fae-84ad-d8c3323e9631" alt="FAQ Page" width="500" height="220" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
     </td>
   </tr>
 </table>
