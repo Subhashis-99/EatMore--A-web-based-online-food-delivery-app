@@ -8,11 +8,12 @@ EatMore is a feature-rich, innovative online food ordering website, built with R
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [FAQ](#faq)
-- [Contributing](#contributing)
+- [Demo](#Demo)
+- [Screenshots](#Screenshots)
 - [Deployment](#deployment)
+- [Contributing](#Contributing)
+- [Support](#Support)
+- [Acknowledgements](#Acknowledgements)
 - [License](#license)
 
 ## Features
@@ -61,7 +62,81 @@ Start the server
     npm run start
 ```
 
+For API keys and other sensitive data, create a .env file(optional) in the project root:
+```bash
+    REACT_APP_API_KEY = your_api_key
+    REACT_APP_SWIGGY_API_URL = your_api_url
+
+```
+
+This application should now be running on localhost. This application should now be running on localhost. If you want to Fork repository and want to run locally, follow this guidelines [Fork and Clone Github Repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+
+
+
     
+## Demo
+
+You can explore the live version of the EatMore app by visiting: [Live Demo](https://eat-more-a-web-based-online-food-delivery-app.vercel.app/). Here, you can browse restaurants, place orders, and experience the app's features in real-time.
+
+
+
+## Screenshots
+
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">Home Page</p>
+      <img src="https://github.com/user-attachments/assets/224aa2e3-029b-4a41-951c-3cc3a25a944f" alt="Home Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">Restaurant Page</p>
+      <img src="https://github.com/user-attachments/assets/0f3d5c2e-67ad-46dd-8c29-c63713d0ca29" alt="Restaurant Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">Search Page</p>
+      <img src="https://github.com/user-attachments/assets/92009d45-bb35-4caf-8d7f-39973df36801" alt="Search Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">Cart Page</p>
+      <img src="https://github.com/user-attachments/assets/fac97663-c747-4ca1-970f-00900423da0f" alt="Cart Page" width="420" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">Contact Page</p>
+      <img src="https://github.com/user-attachments/assets/4112625d-ad38-4c96-85a8-777da39517ee" alt="Contact Page" width="500" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">LogIn Page</p>
+      <img src="https://github.com/user-attachments/assets/07f7a9d2-6102-4c19-8e0f-32f61e07a587" alt="LogIn Page" width="350" height="250" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">Footer Page</p>
+      <img src="https://github.com/user-attachments/assets/b6a6fe0e-9172-494f-a842-d099bac6705b" alt="Footer Page" width="500" height="230" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+    <td style="padding: 10px; text-align: center;">
+      <p style="font-weight: bold; margin-top: 5px;">FAQ Page</p>
+      <img src="https://github.com/user-attachments/assets/917d3462-f5a7-4fae-84ad-d8c3323e9631" alt="FAQ Page" width="400" height="230" style="border: 1px solid #ddd; border-radius: 4px; object-fit: cover;">
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Deployment
 EatMore is deployed on Vercel for easy and scalable hosting. To deploy your own version:
 
@@ -76,123 +151,53 @@ EatMore is deployed on Vercel for easy and scalable hosting. To deploy your own 
 
 
 
-## Acknowledgements
+## Contributing
 
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+Contributions to EatMore are always welcome! If you'd like to contribute, please follow these steps:
 
+- Click the "Fork" button at the top right of the repository page on GitHub. 
 
-## API Reference
-
-#### Get all items
-
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
-
-
-## Lessons Learned
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
-
-## Related
-
-Here are some related projects
-
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-
-
-## Run Locally
-
-Clone the project
-
+- Run the following command to   clone your fork:
 ```bash
-  git clone https://link-to-project
+  git clone "git clone https://github.com/yourusername/eatmore.git" 
 ```
-
-Go to the project directory
-
+- Create a new feature branch and switch to it
 ```bash
-  cd my-project
+  git checkout -b feature/new-feature
 ```
-
-Install dependencies
-
+- Stage and commit your changes with a descriptive message:
 ```bash
-  npm install
-```
-
-Start the server
-
+  git add .
+  git commit -m 'Add new feature'
+``` 
+- Push your branch to your forked repository:
 ```bash
-  npm run start
-```
+ git push origin feature/new-feature
+``` 
+- Go to the "Pull Requests" section of the original repository and click "New Pull Request". Select your branch and submit the pull request for review.
+
+**Additional Information**
+- For more detailed guidelines on how to contribute, refer to the contributing.md file in the repository.
+- Please adhere to this project's Code of Conduct. It helps ensure a welcoming and respectful environment for everyone involved.
+
+Your contributions help make EatMore better for everyone. Thank you for your interest and effort in improving the project!
+
 
 
 ## Support
 
-For support, email fake@fake.com or join our Slack channel.
+For support, email spraharaj26@gmail.com.
+
+You can also connect with me on [LinkedIn](https://www.linkedin.com/in/subhashis-praharaj) for professional networking and updates.
 
 
-## Tech Stack
-
-**Client:** React, Redux, TailwindCSS
-
-**Server:** Node, Express
+## Acknowledgements
+A special thanks to Swiggy for providing live API data to enhance our platform.
 
 
-## Running Tests
-
-To run tests, run the following command
-
-```bash
-  npm run test
-```
+## License
 
 
-## Usage/Examples
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
 
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
-## Used By
-
-This project is used by the following companies:
-
-- Company 1
-- Company 2
-
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
