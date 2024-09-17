@@ -53,7 +53,7 @@ export const Header = () => {
             <li className="hover-navbar">
               <Link to="/info">
                 <div className="flex items-center gap-1">
-                  <i className="fi fi-rs-info mt-[2px] text-xl"></i>
+                  <i className="fi fi-rs-info mt-1 text-xl"></i>
                   <p className="hidden md:inline">Info</p>
                 </div>
               </Link>
