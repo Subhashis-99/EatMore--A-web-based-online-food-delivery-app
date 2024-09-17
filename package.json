@@ -49,5 +49,6 @@
         "quality": 75
       }
     }
-  }
+  },
+  "main": "app.js"
 }
