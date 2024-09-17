@@ -27,10 +27,16 @@ EatMore is a feature-rich, innovative online food ordering website, built with R
 - **Smooth Scroll & Animations**: GSAP and ScrollTrigger are used to create smooth animations and transitions.
 
 ## Technologies Used
-- **Frontend**: ReactJS, Redux Toolkit, GSAP, TailwindCSS
-- **Backend**: Firebase (Authentication & Database)
-- **API Integration**: Swiggy Public APIs
-- **Others**: EmailJS, Dialogflow for Chatbot
+- **Frontend**: ReactJS, TailwindCSS
+- **State Management**: Redux Toolkit, Context API
+- **Routing**: React Router DOM
+- **Styling & Animations**: TailwindCSS, GSAP, ScrollTrigger
+- **Email Service**: EmailJS
+- **Chatbot Integration**: Dialogflow
+- **Testing**: React Testing Library, Jest
+- **Build Tools**: Parcel Bundler, Babel
+- **Authentication**: Firebase
+- **UI Enhancements**: React Hot Toast for notifications, Lensi for smooth scrolling effects
 
 ## Installation
 1. Clone the repository:
