@@ -38,8 +38,21 @@ EatMore is a feature-rich, innovative online food ordering website, built with R
 - **Authentication**: Firebase
 - **UI Enhancements**: React Hot Toast for notifications, Lensi for smooth scrolling effects
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/eatmore.git
-   cd eatmore
+## 🔥 Installation
+
+**Follow these steps to clone and run this project on your local machine:**
+
+<p>You need to write the following commands on the terminal screen(in vscode) so that you can run this project locally.</p>
+<pre>
+  git clone "git clone https://github.com/Subhashis-99/EatMore--A-web-based-online-food-delivery-app.git"</pre>
+
+<p>Go to the project directory</p>
+<pre>cd EatMore--A-web-based-online-food-delivery-app</pre>
+
+<p>Install dependencies</p>
+<pre>npm install</pre>
+
+<p>Start the server</p>
+<pre>npm run start</pre>
+<p>This application should now be running on localhost. If you want to Fork repository and want to run locally, follow this guidelines Fork and Clone Github Repository</p>
+
