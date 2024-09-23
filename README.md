@@ -44,12 +44,12 @@ EatMore is a feature-rich, innovative online food ordering website, built with R
 You need to write the following commands on the terminal screen(in vscode) so that you can run this project locally.
 
 ```bash
-  git clone "https://github.com/chetannada/Namaste-React.git"
+  git clone "https://github.com/Subhashis-99/EatMore--A-web-based-online-food-delivery-app.git"
 ```
 
 Go to the project directory
 ```bash
-  cd Namaste-React
+  cd EatMore--A-web-based-online-food-delivery-app
 ```
 
 Install dependencies
